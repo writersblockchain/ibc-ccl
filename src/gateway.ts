@@ -8,6 +8,7 @@ import { AminoWallet } from "secretjs/dist/wallet_amino.js";
 
 export const getGatewayEncryptionKey = async () => {
     const res = await queryGateway({ encryption_key: {} });
+    console.log(res);
     return res as string;
 }
 

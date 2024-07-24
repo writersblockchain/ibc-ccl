@@ -1,4 +1,6 @@
 import { SecretNetworkClient, Wallet } from "secretjs"
+import dotenv from "dotenv";
+dotenv.config();
 const { 
     CONSUMER_CHAIN_ENDPOINT, 
     CONSUMER_CHAIN_ID, 
@@ -22,7 +24,7 @@ export const secretClient = new SecretNetworkClient({
     walletAddress: secretWallet.address,
 });
 
-
+console.log("Secret Wallet Address: ", secretWallet.address);
 
 export const consumerWallet = new Wallet(CONSUMER_MNEMONIC, {
     bech32Prefix: CONSUMER_PREFIX,
